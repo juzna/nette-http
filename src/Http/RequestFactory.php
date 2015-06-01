@@ -124,7 +124,7 @@ class RequestFactory extends Nette\Object
 						$list[$key][$k] = $v;
 						$list[] = & $list[$key][$k];
 
-					} else {
+					} elseif (is_string($v)) {
 						$list[$key][$k] = (string) preg_replace('#[^' . self::CHARS . ']+#u', '', $v);
 					}
 				}
